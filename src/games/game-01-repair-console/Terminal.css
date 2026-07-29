@@ -1,0 +1,52 @@
+.terminal {
+  background: #000;
+  border: var(--term-border);
+  padding: 1rem;
+  height: 60vh;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  cursor: text;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.terminal__scrollback {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal__line {
+  min-height: 1.4em;
+}
+
+.terminal__line--stderr {
+  color: var(--term-red);
+}
+
+.terminal__line--input .terminal__prompt {
+  color: var(--term-fg-bright);
+}
+
+.terminal__input-row {
+  display: flex;
+  gap: 0.5ch;
+  margin-top: 0.25rem;
+}
+
+.terminal__prompt {
+  color: var(--term-fg-bright);
+  white-space: nowrap;
+}
+
+.terminal__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--term-fg);
+  font: inherit;
+  outline: none;
+  caret-shape: block;
+}

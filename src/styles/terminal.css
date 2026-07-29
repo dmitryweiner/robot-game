@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Terminal8px';
+  src: local('Courier New');
+}
+
+:root {
+  --term-bg: #060a06;
+  --term-fg: #33ff66;
+  --term-fg-dim: #1f8f3d;
+  --term-fg-bright: #8dffb0;
+  --term-amber: #ffb000;
+  --term-red: #ff5555;
+  --term-font: 'Fira Code', 'Courier New', ui-monospace, monospace;
+  --term-border: 4px solid var(--term-fg-dim);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  font-family: var(--term-font);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+a {
+  color: var(--term-fg-bright);
+}
+
+button {
+  font-family: inherit;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  border: 2px solid var(--term-fg);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+button:hover:not(:disabled) {
+  background: var(--term-fg);
+  color: var(--term-bg);
+}
+
+button:disabled {
+  color: var(--term-fg-dim);
+  border-color: var(--term-fg-dim);
+  cursor: not-allowed;
+}
+
+::selection {
+  background: var(--term-fg);
+  color: var(--term-bg);
+}

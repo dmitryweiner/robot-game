@@ -1,0 +1,29 @@
+.man-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4em 0.6em;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.man-links__label {
+  color: var(--term-fg-dim);
+}
+
+.man-links__link {
+  border: none;
+  padding: 0;
+  background: none;
+  color: var(--term-fg);
+  text-decoration: underline;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.man-links__link:hover {
+  background: none;
+  color: var(--term-fg-bright);
+}

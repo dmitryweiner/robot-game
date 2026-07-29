@@ -1,0 +1,31 @@
+.repair-console-game {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.repair-console-game__sidebar {
+  border: 2px solid var(--term-fg-dim);
+  padding: 1rem;
+}
+
+.repair-console-game__sidebar h2 {
+  margin-top: 0;
+}
+
+.repair-console-game__hint {
+  color: var(--term-amber);
+}
+
+.repair-console-game__solved p {
+  color: var(--term-fg-bright);
+}
+
+@media (max-width: 720px) {
+  .repair-console-game {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+.hint-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.hint-button__toggle {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.hint-button__command {
+  color: var(--term-fg-bright);
+  cursor: not-allowed;
+}

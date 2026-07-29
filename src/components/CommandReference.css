@@ -1,0 +1,4 @@
+.command-reference__synopsis code {
+  color: var(--term-fg-bright);
+  font-size: 1.05em;
+}

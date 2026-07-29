@@ -1,0 +1,90 @@
+.robot-illustration {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.robot-illustration__floor {
+  fill: none;
+  stroke: var(--term-fg-dim);
+  stroke-width: 2;
+}
+
+.robot-illustration__figure {
+  /* Body parts are authored around local (0, 0) — the hips pivot — so the
+     transform origin stays there; translate(100px, 120px) is what moves the
+     whole figure to its spot above the floor line. */
+  transform-origin: 0 0;
+  transform: translate(100px, 120px) rotate(90deg);
+  transition: transform 0.8s ease;
+}
+
+.robot-illustration[data-pose='lying'] .robot-illustration__figure {
+  transform: translate(100px, 120px) rotate(90deg);
+}
+
+.robot-illustration[data-pose='lifting'] .robot-illustration__figure {
+  transform: translate(100px, 120px) rotate(40deg);
+}
+
+.robot-illustration[data-pose='fixed'] .robot-illustration__figure {
+  transform: translate(100px, 120px) rotate(0deg);
+}
+
+.robot-illustration__torso,
+.robot-illustration__head,
+.robot-illustration__arm {
+  fill: none;
+  stroke: var(--term-fg);
+  stroke-width: 2;
+}
+
+.robot-illustration__eye {
+  fill: var(--term-red);
+  animation: robot-blink 1.6s steps(1) infinite;
+}
+
+.robot-illustration[data-pose='fixed'] .robot-illustration__eye {
+  fill: var(--term-fg-bright);
+  animation: robot-blink 2.6s steps(1) infinite;
+}
+
+.robot-illustration__gear {
+  fill: none;
+  stroke: var(--term-amber);
+  stroke-width: 2;
+  stroke-dasharray: 3 2;
+  transform-origin: 26px -8px;
+  animation: robot-grind 0.5s linear infinite;
+}
+
+.robot-illustration[data-pose='lifting'] .robot-illustration__gear,
+.robot-illustration[data-pose='fixed'] .robot-illustration__gear {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes robot-blink {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes robot-grind {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

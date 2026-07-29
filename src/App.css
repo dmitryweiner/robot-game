@@ -1,0 +1,22 @@
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__header {
+  padding: 0.75rem 1rem;
+}
+
+.app__back {
+  border: none;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.app__back:hover {
+  background: none;
+  color: var(--term-fg-bright);
+  text-decoration: underline;
+}
