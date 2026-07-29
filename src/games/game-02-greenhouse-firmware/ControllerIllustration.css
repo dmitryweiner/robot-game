@@ -1,0 +1,109 @@
+.controller-illustration {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.controller-illustration__box {
+  fill: none;
+  stroke: var(--term-fg);
+  stroke-width: 2;
+}
+
+.controller-illustration__screen {
+  fill: var(--term-bg);
+  stroke: var(--term-fg-dim);
+  stroke-width: 1;
+}
+
+.controller-illustration__screen-text {
+  fill: var(--term-fg);
+  font-family: var(--term-font);
+  font-size: 8px;
+}
+
+.controller-illustration__led {
+  fill: var(--term-red);
+  animation: controller-led-blink 0.6s steps(1) infinite;
+}
+
+.controller-illustration[data-pose='quiet'] .controller-illustration__led {
+  animation-duration: 1.6s;
+}
+
+.controller-illustration[data-pose='fixed'] .controller-illustration__led {
+  fill: var(--term-fg);
+  animation: controller-led-blink 2.6s steps(1) infinite;
+}
+
+.controller-illustration__pump-housing {
+  fill: none;
+  stroke: var(--term-fg-dim);
+  stroke-width: 2;
+}
+
+.controller-illustration__pump-blade {
+  stroke: var(--term-amber);
+  stroke-width: 2;
+}
+
+.controller-illustration__pump-blades {
+  transform-origin: 0 0;
+}
+
+.controller-illustration__pump {
+  transform-origin: 0 0;
+}
+
+/* broken: both pumps spin fast and shake, running dry */
+.controller-illustration[data-pose='broken'] .controller-illustration__pump-blades {
+  animation: controller-pump-spin 0.35s linear infinite;
+}
+
+.controller-illustration[data-pose='broken'] .controller-illustration__pump {
+  animation: controller-pump-shake 0.18s ease-in-out infinite;
+}
+
+/* quiet: switched off by hand, blades at rest */
+.controller-illustration[data-pose='quiet'] .controller-illustration__pump-blades {
+  animation: none;
+}
+
+/* fixed: firmware understands the sensors again, gentle steady cycling */
+.controller-illustration[data-pose='fixed'] .controller-illustration__pump-blades {
+  animation: controller-pump-spin 2.4s linear infinite;
+}
+
+@keyframes controller-led-blink {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes controller-pump-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes controller-pump-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 1px);
+  }
+}

@@ -1,4 +1,4 @@
-.terminal {
+.console-pane {
   background: #000;
   border: var(--term-border);
   padding: 1rem;
@@ -11,37 +11,37 @@
   line-height: 1.4;
 }
 
-.terminal__scrollback {
+.console-pane__scrollback {
   flex: 1;
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-.terminal__line {
+.console-pane__line {
   min-height: 1.4em;
 }
 
-.terminal__line--stderr {
+.console-pane__line--stderr {
   color: var(--term-red);
 }
 
-.terminal__line--input .terminal__prompt {
+.console-pane__line--input .console-pane__prompt {
   color: var(--term-fg-bright);
 }
 
-.terminal__input-row {
+.console-pane__input-row {
   display: flex;
   gap: 0.5ch;
   margin-top: 0.25rem;
 }
 
-.terminal__prompt {
+.console-pane__prompt {
   color: var(--term-fg-bright);
   white-space: nowrap;
 }
 
-.terminal__input {
+.console-pane__input {
   flex: 1;
   background: transparent;
   border: none;

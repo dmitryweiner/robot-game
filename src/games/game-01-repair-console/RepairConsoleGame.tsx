@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { CommandReference, type ManPageEntry } from '../../components/CommandReference';
+import { HintButton } from '../../components/HintButton';
 import { ManLinks } from '../../components/ManLinks';
 import type { GameProps } from '../types';
-import { HintButton } from './HintButton';
 import { COMMAND_MAN_PAGES, OPERATOR_MAN_PAGES } from './manPages';
 import { detectStageIndex, STAGES } from './objectives';
 import { poseForProgress } from './pose';

@@ -35,7 +35,7 @@ describe('Terminal', () => {
     render(<Terminal initialFs={createInitialFs()} />);
     await type(user, 'frobnicate');
     const errorLine = await screen.findByText('frobnicate: command not found');
-    expect(errorLine).toHaveClass('terminal__line--stderr');
+    expect(errorLine).toHaveClass('console-pane__line--stderr');
   });
 
   it('clears the input field after submitting', async () => {

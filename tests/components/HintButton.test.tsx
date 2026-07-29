@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
-import { HintButton } from '../../src/games/game-01-repair-console/HintButton';
+import { HintButton } from '../../src/components/HintButton';
 
 describe('HintButton', () => {
   it('hides the command until the button is pressed', () => {
